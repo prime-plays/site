@@ -1,0 +1,310 @@
+/* ==========================================================================
+   ARETE - Design System
+   Minimal. Calm. Composed.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Fonts
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Tungsten Narrow';
+  src: url('../assets/fonts/Tungsten-Font/WOFF2/TungstenNarrow-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tungsten';
+  src: url('../assets/fonts/Tungsten-Font/WOFF2/Tungsten-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors */
+  --color-bg: #121212;
+  --color-bg-elevated: #222222;
+  --color-text: #ECE8E1;
+  --color-text-muted: #717171;
+  --color-text-subtle: rgba(255, 255, 255, 0.6);
+  --color-border: #2A2A2A;
+  --color-accent: #9e4b41;
+
+  /* Typography */
+  --font-display: 'Tungsten Narrow', sans-serif;
+  --font-heading: 'Tungsten', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing - generous for negative space */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Transitions */
+  --transition: 200ms ease;
+
+  /* Neo-Brutalist */
+  --shadow-brutal: 4px 4px 0 var(--color-text);
+  --shadow-brutal-accent: 4px 4px 0 var(--color-accent);
+  --shadow-brutal-sm: 2px 2px 0 var(--color-text);
+  --border-brutal: 2px solid var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Reset
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  color: var(--color-text);
+}
+
+/* Main title uses Tungsten Narrow */
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 15vw, 12rem);
+}
+
+/* Other headings use Tungsten Bold */
+h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+h2 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+p {
+  max-width: 55ch;
+  line-height: 1.8;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-subtle {
+  color: var(--color-text-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+section {
+  padding: var(--space-2xl) 0;
+}
+
+/* --------------------------------------------------------------------------
+   Components - Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all var(--transition);
+  border: var(--border-brutal);
+}
+
+.btn--primary {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  box-shadow: 4px 4px 0 var(--color-text);
+  border: none;
+}
+
+.btn--primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-text);
+}
+
+.btn--primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-text);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-text);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--color-accent);
+}
+
+.btn--outline:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Components - Navigation
+   -------------------------------------------------------------------------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--space-sm) 0;
+  background-color: var(--color-bg);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+.nav__link {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+  padding: 0.5rem 1rem;
+}
+
+.nav__link:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Components - Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  padding: var(--space-sm) 0 0 0;
+  background-color: var(--color-text);
+}
+
+.footer .footer__text {
+  color: var(--color-bg);
+  opacity: 0.6;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.footer__text {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Utilities
+   -------------------------------------------------------------------------- */
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+    --space-2xl: 8rem;
+  }
+
+  .nav__links {
+    display: none;
+  }
+}
