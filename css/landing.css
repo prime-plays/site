@@ -169,6 +169,61 @@
 }
 
 /* --------------------------------------------------------------------------
+   Athletes Strip
+   -------------------------------------------------------------------------- */
+.athletes {
+  background-color: var(--color-bg);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) 0;
+}
+
+.athletes__strip {
+  display: flex;
+  max-width: 1512px;
+  width: 100%;
+  height: 100%;
+  max-height: 85vh;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  overflow: hidden;
+}
+
+.athletes__frame {
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  margin: 0 -4px;
+}
+
+/* First frame: straight left edge */
+.athletes__frame:first-child {
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+
+/* Last frame: straight right edge */
+.athletes__frame:last-child {
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Images */
+.athletes__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
    Waitlist
    -------------------------------------------------------------------------- */
 .waitlist {
@@ -249,4 +304,33 @@
     grid-template-columns: 1fr;
   }
 
+  /* Athletes strip - horizontal scroll on mobile */
+  .athletes {
+    height: 60vh;
+    padding: var(--space-md) 0;
+  }
+
+  .athletes__strip {
+    max-height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .athletes__frame {
+    flex: 0 0 75vw;
+    scroll-snap-align: center;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+  }
+
+  .athletes__frame:first-child {
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+    margin-left: var(--space-md);
+  }
+
+  .athletes__frame:last-child {
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+    margin-right: var(--space-md);
+  }
 }

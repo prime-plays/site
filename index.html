@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arete — Excellence in Motion</title>
+  <title>Arete</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,8 +32,26 @@
       <div class="container hero__content">
         <h1 class="hero__title">Arete</h1>
         <p class="hero__greek">(ah-REH-tay)</p>
-        <p class="hero__meaning">Excellence of any kind – the notion of the fulfillment of purpose or function: living
+        <p class="hero__meaning">Pursuing excellence – the notion of the fulfillment of purpose or function. Living
           up to one's full potential</p>
+      </div>
+    </section>
+
+    <!-- Athletes Strip -->
+    <section class="athletes">
+      <div class="athletes__strip">
+        <div class="athletes__frame">
+          <img src="images/ali-bw.webp" alt="" class="athletes__img">
+        </div>
+        <div class="athletes__frame">
+          <img src="images/kobe-bw.webp" alt="" class="athletes__img">
+        </div>
+        <div class="athletes__frame">
+          <img src="images/mj-duotone.webp" alt="" class="athletes__img">
+        </div>
+        <div class="athletes__frame">
+          <img src="images/sw-bw.webp" alt="" class="athletes__img">
+        </div>
       </div>
     </section>
 
@@ -74,6 +92,16 @@
     </div>
   </footer>
 
+  <script>
+    // Scroll to MJ (red) frame on mobile
+    if (window.innerWidth <= 768) {
+      const strip = document.querySelector('.athletes__strip');
+      const mjFrame = document.querySelectorAll('.athletes__frame')[2];
+      if (strip && mjFrame) {
+        strip.scrollLeft = mjFrame.offsetLeft - 16;
+      }
+    }
+  </script>
 </body>
 
 </html>

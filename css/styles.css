@@ -33,7 +33,7 @@
   --color-text-muted: #717171;
   --color-text-subtle: rgba(255, 255, 255, 0.6);
   --color-border: #2A2A2A;
-  --color-accent: #c2453d;
+  --color-accent: #CA4D44;
 
   /* Typography */
   --font-display: 'Tungsten Narrow', sans-serif;
@@ -61,7 +61,9 @@
 /* --------------------------------------------------------------------------
    Reset
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -82,7 +84,8 @@ body {
   background-color: var(--color-bg);
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
   display: block;
@@ -103,7 +106,10 @@ button {
 /* --------------------------------------------------------------------------
    Typography
    -------------------------------------------------------------------------- */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -118,7 +124,9 @@ h1 {
 }
 
 /* Other headings use Tungsten Bold */
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
 }
 
@@ -267,7 +275,7 @@ section {
    Components - Footer
    -------------------------------------------------------------------------- */
 .footer {
-  padding: var(--space-sm) 0 0 0;
+  padding: var(--space-sm) 0 var(--space-sm) 0;
   background-color: var(--color-text);
 }
 
@@ -291,8 +299,14 @@ section {
 /* --------------------------------------------------------------------------
    Utilities
    -------------------------------------------------------------------------- */
-.text-center { text-align: center; }
-.mx-auto { margin-left: auto; margin-right: auto; }
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* --------------------------------------------------------------------------
    Responsive
