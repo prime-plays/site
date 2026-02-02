@@ -360,7 +360,7 @@
 
 .profile-card__stat-num {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--color-text);
   line-height: 1;
@@ -368,7 +368,7 @@
 }
 
 .profile-card__stat-label {
-  font-size: 9px;
+  font-size: 7px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
