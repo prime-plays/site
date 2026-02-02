@@ -132,6 +132,26 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
         closeNav();
+        hamburger.focus();
+      }
+    });
+
+    // Focus trap
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab' || !mobileNav.classList.contains('open')) return;
+
+      const focusable = mobileNav.querySelectorAll('a, button');
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     });
   }

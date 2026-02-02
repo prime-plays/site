@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 120px;
+  padding-top: calc(var(--space-8) + var(--space-7));
   padding-bottom: var(--space-9);
 }
 
@@ -173,7 +173,7 @@
 @media (max-width: 768px) {
   .features-hero {
     min-height: auto;
-    padding-top: 100px;
+    padding-top: calc(var(--space-8) + var(--space-6));
     padding-bottom: var(--space-7);
   }
 
@@ -222,7 +222,7 @@
 
 @media (max-width: 480px) {
   .features-hero {
-    padding-top: 88px;
+    padding-top: calc(var(--space-8) + var(--space-5));
     padding-bottom: var(--space-6);
   }
 

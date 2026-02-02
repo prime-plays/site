@@ -9,9 +9,15 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  
-  
-  
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Chalk — Where Real Performance Gets Recognized">
+  <meta property="og:description" content="Chalk is where athletes find their community, get recruited, and organize the games that matter. Communities, recruiting, and events — all in one platform.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chalk — Where Real Performance Gets Recognized">
+  <meta name="twitter:description" content="Chalk is where athletes find their community, get recruited, and organize the games that matter.">
+
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
@@ -30,7 +36,7 @@
       </ul>
       <div class="nav__actions">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -41,29 +47,29 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
         <a href="waitlist.html" class="btn btn--primary btn--nav">Join Waitlist</a>
       </div>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </nav>
 
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav" id="mobile-nav">
-    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="index.html" class="mobile-nav__link mobile-nav__link--active">Home</a>
     <a href="features.html" class="mobile-nav__link">Features</a>
     <a href="manifesto.html" class="mobile-nav__link">Manifesto</a>
     <a href="about.html" class="mobile-nav__link">About</a>
     <a href="waitlist.html" class="mobile-nav__link mobile-nav__link--accent">Join Waitlist</a>
     <button class="theme-toggle mobile-nav__theme-toggle" aria-label="Toggle theme">
-      <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="5"></circle>
         <line x1="12" y1="1" x2="12" y2="3"></line>
         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -74,7 +80,7 @@
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
       </svg>
-      <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>
     </button>
@@ -117,7 +123,7 @@
           <div class="card">
             <div class="card__icon">
               <!-- Communities icon (speech bubbles) -->
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 6h18v13H10l-4 4v-4H4z"></path>
                 <path d="M10 13h18v13h-2v4l-4-4H10z"></path>
               </svg>
@@ -129,7 +135,7 @@
           <div class="card">
             <div class="card__icon">
               <!-- Recruiting icon (profile + badge) -->
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="13" cy="10" r="5"></circle>
                 <path d="M3 28v-3c0-4.4 4.5-8 10-8s10 3.6 10 8v3"></path>
                 <path d="M25 4l3 3-3 3"></path>
@@ -143,7 +149,7 @@
           <div class="card">
             <div class="card__icon">
               <!-- Events icon (calendar + pin) -->
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="4" y="6" width="24" height="22"></rect>
                 <line x1="4" y1="12" x2="28" y2="12"></line>
                 <line x1="10" y1="3" x2="10" y2="9"></line>
@@ -369,8 +375,8 @@
         <div class="footer__col">
           <h4 class="footer__heading">Connect</h4>
           <ul class="footer__links">
-            <li><a href="#" class="footer__link">Twitter</a></li>
-            <li><a href="#" class="footer__link">Instagram</a></li>
+            <li><span class="footer__link footer__link--disabled">Twitter (Coming Soon)</span></li>
+            <li><span class="footer__link footer__link--disabled">Instagram (Coming Soon)</span></li>
           </ul>
         </div>
       </div>
