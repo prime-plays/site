@@ -1,0 +1,443 @@
+/* ==========================================================================
+   CHALK v2 — Home Page
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-7);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, var(--color-text) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.035;
+}
+
+[data-theme="light"] .hero__bg {
+  opacity: 0.04;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__badge {
+  margin-bottom: var(--space-5);
+}
+
+.hero__title {
+  font-family: var(--font-display-narrow);
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+}
+
+.hero__subtitle {
+  max-width: 580px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0 auto;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__divider {
+  display: none;
+}
+
+/* Hero entrance animation */
+.hero__anim {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeInUp 600ms var(--ease) forwards;
+}
+
+.hero__anim--1 { animation-delay: 100ms; }
+.hero__anim--2 { animation-delay: 200ms; }
+.hero__anim--3 { animation-delay: 350ms; }
+.hero__anim--4 { animation-delay: 500ms; }
+
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Intro (What is Chalk)
+   -------------------------------------------------------------------------- */
+.intro {
+  padding: var(--space-9) 0;
+}
+
+.intro__inner {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro__badge {
+  margin-bottom: var(--space-5);
+}
+
+.intro__heading {
+  margin-bottom: var(--space-5);
+}
+
+.intro__text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+/* --------------------------------------------------------------------------
+   Features Grid
+   -------------------------------------------------------------------------- */
+.features {
+  padding: var(--space-9) 0;
+}
+
+.features .badge {
+  margin-bottom: var(--space-6);
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+
+.features .card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.features .card .card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.features .card h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1;
+}
+
+.features .card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: none;
+}
+
+/* Override default card hover — these aren't clickable */
+.features .card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-border-hover);
+  cursor: default;
+}
+
+.features .card .card__icon {
+  transition: color var(--duration) var(--ease);
+}
+
+.features .card:hover .card__icon {
+  color: var(--color-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Athletes Strip
+   -------------------------------------------------------------------------- */
+.athletes {
+  padding: var(--space-7) 0;
+  overflow: hidden;
+}
+
+.athletes__label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.athletes__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.athletes__frame {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-surface);
+}
+
+.athletes__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%);
+  transition: filter 500ms var(--ease), transform 500ms var(--ease);
+}
+
+.athletes__frame:hover .athletes__img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.athletes__name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 16px 16px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+}
+
+.athletes__frame:hover .athletes__name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Manifesto Teaser
+   -------------------------------------------------------------------------- */
+.manifesto-teaser {
+  padding: var(--space-9) 0;
+}
+
+.manifesto-teaser .badge {
+  margin-bottom: var(--space-6);
+}
+
+.manifesto-teaser__content {
+  max-width: 700px;
+}
+
+.manifesto-teaser__quote {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0 0 var(--space-6);
+  border: none;
+  padding: 0;
+}
+
+.manifesto-teaser__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  transition: color var(--duration) var(--ease);
+}
+
+.manifesto-teaser__link:hover {
+  color: var(--color-accent-hover);
+}
+
+.manifesto-teaser__arrow {
+  display: inline-block;
+  transition: transform 300ms var(--ease);
+}
+
+.manifesto-teaser__link:hover .manifesto-teaser__arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   CTA / Waitlist
+   -------------------------------------------------------------------------- */
+.cta {
+  padding: var(--space-9) 0;
+  text-align: center;
+}
+
+.cta__inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.cta__title {
+  margin-bottom: var(--space-6);
+}
+
+.cta__form {
+  display: flex;
+  gap: 0;
+  margin-top: var(--space-5);
+}
+
+.cta__input {
+  flex: 1;
+  border-right: none !important;
+  min-width: 0;
+}
+
+.cta__input:focus {
+  z-index: 1;
+}
+
+.cta__submit {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.cta__note {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive: Tablet (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding-top: var(--space-9);
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 9vw, 5rem);
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .athletes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro {
+    padding: var(--space-8) 0;
+  }
+
+  .features,
+  .manifesto-teaser,
+  .cta {
+    padding: var(--space-8) 0;
+  }
+
+}
+
+/* --------------------------------------------------------------------------
+   Responsive: Mobile (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+    padding-top: var(--space-8);
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 11vw, 3.5rem);
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .intro__text {
+    font-size: 16px;
+  }
+
+  .athletes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta__form {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cta__input {
+    border-right: 2px solid var(--color-border) !important;
+    border-bottom: none !important;
+  }
+
+  .cta__submit {
+    width: 100%;
+  }
+
+  .manifesto-teaser__quote {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  }
+}

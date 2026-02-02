@@ -1,0 +1,262 @@
+/* ==========================================================================
+   CHALK v2 — Features Page
+   ========================================================================== */
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.features-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: var(--space-9);
+}
+
+.features-hero .badge {
+  margin-bottom: var(--space-5);
+}
+
+.features-hero__title {
+  margin-top: var(--space-5);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-hero__subtitle {
+  margin-top: var(--space-5);
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   Feature Blocks
+   ========================================================================== */
+
+.feature-block {
+  padding: var(--space-9) 0;
+}
+
+.feature-block__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* Reversed layout: visual on left, text on right */
+.feature-block--reverse .feature-block__inner {
+  direction: rtl;
+}
+
+.feature-block--reverse .feature-block__inner > * {
+  direction: ltr;
+}
+
+/* --- Badge Number --- */
+
+.feature-block__badge {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+/* --- Title --- */
+
+.feature-block__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--color-text);
+}
+
+/* --- Description --- */
+
+.feature-block__desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-5);
+  max-width: 50ch;
+}
+
+/* --- Feature List --- */
+
+.feature-block__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-block__list li {
+  position: relative;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  padding: 8px 0;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.feature-block__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   SVG Illustrations
+   ========================================================================== */
+
+.feature-block__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-block__visual svg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+
+/* ==========================================================================
+   Bottom CTA
+   ========================================================================== */
+
+.features-cta {
+  text-align: center;
+  padding: var(--space-9) 0;
+}
+
+.features-cta__title {
+  font-family: var(--font-display-narrow);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: var(--color-text);
+}
+
+.features-cta__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--space-7);
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Responsive: Tablet (max-width: 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .features-hero {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: var(--space-7);
+  }
+
+  .features-hero__subtitle {
+    font-size: 16px;
+  }
+
+  .feature-block {
+    padding: var(--space-7) 0;
+  }
+
+  .feature-block__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Reset direction on mobile so text always comes first */
+  .feature-block--reverse .feature-block__inner {
+    direction: ltr;
+  }
+
+  .feature-block__visual {
+    order: 2;
+  }
+
+  .feature-block__content {
+    order: 1;
+  }
+
+  .feature-block__badge {
+    font-size: 3rem;
+  }
+
+  .feature-block__visual svg {
+    max-width: 340px;
+  }
+
+  .features-cta {
+    padding: var(--space-7) 0;
+  }
+}
+
+/* ==========================================================================
+   Responsive: Mobile (max-width: 480px)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .features-hero {
+    padding-top: 88px;
+    padding-bottom: var(--space-6);
+  }
+
+  .feature-block {
+    padding: var(--space-6) 0;
+  }
+
+  .feature-block__inner {
+    gap: var(--space-5);
+  }
+
+  .feature-block__badge {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .feature-block__desc {
+    font-size: 15px;
+  }
+
+  .feature-block__visual svg {
+    max-width: 280px;
+  }
+
+  .features-cta {
+    padding: var(--space-6) 0;
+  }
+
+  .features-cta__actions {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .features-cta__actions .btn {
+    width: 100%;
+  }
+}

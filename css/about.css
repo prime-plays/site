@@ -1,0 +1,263 @@
+/* ==========================================================================
+   About Page — Chalk v2
+   ========================================================================== */
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.about-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: var(--space-9);
+}
+
+.about-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.about-hero__title {
+  max-width: 900px;
+}
+
+.about-hero__subtitle {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  max-width: 480px;
+}
+
+/* ==========================================================================
+   Vision
+   ========================================================================== */
+
+.vision {
+  padding: var(--space-9) 0;
+}
+
+.vision__heading {
+  margin-bottom: var(--space-7);
+}
+
+.vision__grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.vision__text p {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: none;
+}
+
+.vision__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.vision__stat {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 24px;
+}
+
+.vision__stat-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-accent);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.vision__stat-label {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Values
+   ========================================================================== */
+
+.values {
+  padding: var(--space-9) 0;
+}
+
+.values__heading {
+  margin-bottom: var(--space-7);
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.values__number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.values__title {
+  margin-bottom: 12px;
+}
+
+.values__text {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Comparison
+   ========================================================================== */
+
+.comparison {
+  padding: var(--space-9) 0;
+}
+
+.comparison__heading {
+  margin-bottom: var(--space-7);
+}
+
+.comparison__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.comparison__col {
+  padding: 32px;
+}
+
+.comparison__col--them {
+  background-color: var(--color-surface);
+}
+
+.comparison__col--chalk {
+  background-color: var(--color-surface-2);
+  border-left: 3px solid var(--color-accent);
+}
+
+.comparison__header {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.comparison__item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 15px;
+}
+
+.comparison__item:last-child {
+  border-bottom: none;
+}
+
+.comparison__item--them {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-text-muted);
+}
+
+.comparison__item--chalk {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+
+.about-cta {
+  text-align: center;
+  padding: 96px 0;
+}
+
+.about-cta__heading {
+  margin-bottom: var(--space-5);
+}
+
+.about-cta__text {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+  margin: 0 auto var(--space-7);
+  max-width: 520px;
+}
+
+/* ==========================================================================
+   Responsive: Tablet (max-width: 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 40vh;
+    padding-top: 100px;
+    padding-bottom: var(--space-7);
+  }
+
+  .vision__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  .values__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison__col--chalk {
+    border-left: none;
+    border-top: 3px solid var(--color-accent);
+  }
+}
+
+/* ==========================================================================
+   Responsive: Mobile (max-width: 480px)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding-top: 88px;
+    padding-bottom: var(--space-6);
+  }
+
+  .about-cta {
+    padding: var(--space-8) 0;
+  }
+
+  .comparison__col {
+    padding: 24px;
+  }
+
+  .vision {
+    padding: var(--space-7) 0;
+  }
+
+  .values {
+    padding: var(--space-7) 0;
+  }
+
+  .comparison {
+    padding: var(--space-7) 0;
+  }
+}

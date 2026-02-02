@@ -1,107 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arete</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <title>Chalk — The Athlete Platform</title>
+  <meta name="description" content="Chalk is where athletes find their community, get recruited, and organize the games that matter. Communities, recruiting, and events — all in one platform.">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-chalk.png">
+  <link rel="apple-touch-icon" href="images/logo-chalk.png">
+  
+  
+  
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
-
 <body>
 
   <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="/" class="nav__logo">Arete</a>
+      <a href="index.html" class="nav__logo-link">
+        <span class="nav__logo">CHALK</span>
+      </a>
       <ul class="nav__links">
-        <li><a href="#manifesto" class="nav__link">Manifesto</a></li>
-        <li><a href="#waitlist" class="btn btn--primary">Join Waitlist</a></li>
+        <li><a href="features.html" class="nav__link">Features</a></li>
+        <li><a href="manifesto.html" class="nav__link">Manifesto</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
       </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="waitlist.html" class="btn btn--primary btn--nav">Join Waitlist</a>
+      </div>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="features.html" class="mobile-nav__link">Features</a>
+    <a href="manifesto.html" class="mobile-nav__link">Manifesto</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="waitlist.html" class="mobile-nav__link mobile-nav__link--accent">Join Waitlist</a>
+  </div>
+
   <main>
-    <!-- Hero -->
+
+    <!-- Section 1: Hero -->
     <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__content">
-        <h1 class="hero__title">Arete</h1>
-        <p class="hero__greek">(ah-REH-tay)</p>
-        <p class="hero__meaning">Pursuing excellence – the notion of the fulfillment of purpose or function. Living
-          up to one's full potential</p>
-      </div>
-    </section>
-
-    <!-- Athletes Strip -->
-    <section class="athletes" aria-label="Legendary athletes">
-      <div class="athletes__strip">
-        <div class="athletes__frame">
-          <img src="images/muhammad-ali.webp" alt="Muhammad Ali" class="athletes__img">
-        </div>
-        <div class="athletes__frame">
-          <img src="images/usain-bolt.webp" alt="Usain Bolt" class="athletes__img">
-        </div>
-        <div class="athletes__frame">
-          <img src="images/michael-jordan.webp" alt="Michael Jordan" class="athletes__img">
-        </div>
-        <div class="athletes__frame">
-          <img src="images/serena-williams.webp" alt="Serena Williams" class="athletes__img">
+        <span class="badge badge--accent hero__badge hero__anim hero__anim--1">For Athletes, By Athletes</span>
+        <h1 class="hero__title hero__anim hero__anim--2">Where Real Performance Gets Recognized</h1>
+        <p class="hero__subtitle hero__anim hero__anim--3">The platform where athletes find their community, get recruited, and organize the games that matter. All in one place.</p>
+        <div class="hero__actions hero__anim hero__anim--4">
+          <a href="waitlist.html" class="btn btn--primary btn--lg">Join the Waitlist</a>
+          <a href="manifesto.html" class="btn btn--outline btn--lg">Read the Manifesto</a>
         </div>
       </div>
+      <hr class="hero__divider">
     </section>
 
-    <!-- Manifesto -->
-    <section id="manifesto" class="manifesto">
+    <!-- Section 2: What is Chalk -->
+    <section class="intro reveal" id="about">
       <div class="container">
-        <div class="manifesto__letter">
-          <span class="manifesto__label">Manifesto</span>
-          <p class="manifesto__text">We built Arete because highlight reels are broken. A 30-second clip doesn't show
-            the 6am workouts, the failed attempts, the slow climb toward greatness. It shows the peak, not the journey.
-          </p>
-          <p class="manifesto__text">We believe athletes deserve more than likes and views. They deserve a platform
-            where real performance is captured, verified, and valued. Where scouts find signal, not noise. Where your
-            community pushes you to be better—not just more popular.</p>
-          <p class="manifesto__text">This is a space for the grind. For the pursuit. For excellence.</p>
-          <p class="manifesto__signature">— The Arete Team</p>
+        <div class="intro__inner">
+          <span class="badge intro__badge">The Platform</span>
+          <h2 class="intro__heading">Built for the Ones Who Show Up</h2>
+          <p class="intro__text">Athletes post on Instagram, TikTok, and X — but sports content gets buried under everything else. Recruiting is hit or miss. Communities are scattered across WhatsApp groups and Discord servers. Chalk brings it all together in one place built specifically for athletes.</p>
         </div>
       </div>
     </section>
 
-    <!-- Waitlist -->
-    <section id="waitlist" class="waitlist">
-      <div class="container waitlist__content">
-        <h2 class="waitlist__title">Join the Waitlist</h2>
-        <p class="waitlist__text">Be first to access when we launch.</p>
-        <form class="waitlist__form">
-          <input type="email" placeholder="Enter your email" class="waitlist__input" required>
-          <button type="submit" class="btn btn--primary">Notify Me</button>
-        </form>
+    <!-- Section 3: Features Grid -->
+    <section class="features reveal" id="features">
+      <div class="container">
+        <span class="badge badge--accent">Features</span>
+        <div class="features__grid stagger">
+
+          <div class="card">
+            <div class="card__icon">
+              <!-- Communities icon (speech bubbles) -->
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h18v13H10l-4 4v-4H4z"></path>
+                <path d="M10 13h18v13h-2v4l-4-4H10z"></path>
+              </svg>
+            </div>
+            <h3>Communities</h3>
+            <p>Sport-specific communities with posts, threads, votes, and challenges. Find your tribe. Like Reddit, but built for athletes.</p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon">
+              <!-- Recruiting icon (profile + badge) -->
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13" cy="10" r="5"></circle>
+                <path d="M3 28v-3c0-4.4 4.5-8 10-8s10 3.6 10 8v3"></path>
+                <path d="M25 4l3 3-3 3"></path>
+                <line x1="22" y1="7" x2="28" y2="7"></line>
+              </svg>
+            </div>
+            <h3>Recruiting</h3>
+            <p>Athletic profiles with stats, rankings, and match history. Get discovered by scouts and coaches. Like LinkedIn, but for athletes.</p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon">
+              <!-- Events icon (calendar + pin) -->
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="6" width="24" height="22"></rect>
+                <line x1="4" y1="12" x2="28" y2="12"></line>
+                <line x1="10" y1="3" x2="10" y2="9"></line>
+                <line x1="22" y1="3" x2="22" y2="9"></line>
+                <circle cx="16" cy="20" r="4"></circle>
+                <line x1="16" y1="16" x2="16" y2="20"></line>
+              </svg>
+            </div>
+            <h3>Matches & Events</h3>
+            <p>Host and join matches, book courts, find pickup games. Everything your WhatsApp group does, but better. All in one place.</p>
+          </div>
+
+        </div>
       </div>
     </section>
+
+    <!-- Section 4: Athletes Strip -->
+    <section class="athletes reveal" aria-label="Inspired by the greats">
+      <div class="container">
+        <span class="athletes__label">Inspired by the Greats</span>
+      </div>
+      <div class="athletes__grid">
+        <div class="athletes__frame">
+          <img src="images/muhammad-ali.webp" alt="Muhammad Ali" class="athletes__img" loading="lazy">
+          <span class="athletes__name">Muhammad Ali</span>
+        </div>
+        <div class="athletes__frame">
+          <img src="images/usain-bolt.webp" alt="Usain Bolt" class="athletes__img" loading="lazy">
+          <span class="athletes__name">Usain Bolt</span>
+        </div>
+        <div class="athletes__frame">
+          <img src="images/michael-jordan.webp" alt="Michael Jordan" class="athletes__img" loading="lazy">
+          <span class="athletes__name">Michael Jordan</span>
+        </div>
+        <div class="athletes__frame">
+          <img src="images/serena-williams.webp" alt="Serena Williams" class="athletes__img" loading="lazy">
+          <span class="athletes__name">Serena Williams</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Manifesto Teaser -->
+    <section class="manifesto-teaser reveal" id="manifesto">
+      <div class="container">
+        <span class="badge badge--accent">Manifesto</span>
+        <div class="manifesto-teaser__content">
+          <blockquote class="manifesto-teaser__quote">
+            "We built Chalk because the highlight reel is broken. A 30-second clip doesn't capture the 6am sessions, the failed attempts, or the slow grind toward greatness."
+          </blockquote>
+          <a href="manifesto.html" class="manifesto-teaser__link">
+            Read the full manifesto <span class="manifesto-teaser__arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: CTA / Waitlist -->
+    <section class="cta reveal" id="waitlist">
+      <div class="container">
+        <div class="cta__inner">
+          <h2 class="cta__title">Ready to Leave Your Mark?</h2>
+          <form class="waitlist-form cta__form" action="#" method="post">
+            <input type="email" class="input cta__input" placeholder="Enter your email" required aria-label="Email address">
+            <button type="submit" class="btn btn--primary cta__submit">Join Waitlist</button>
+          </form>
+          <p class="cta__note">Early access for athletes. No spam.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__text">© 2026 Prime Plays</p>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo-text">CHALK</span>
+          <p class="footer__tagline">Where athletes rise together</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Pages</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="manifesto.html" class="footer__link">Manifesto</a></li>
+            <li><a href="features.html" class="footer__link">Features</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Product</h4>
+          <ul class="footer__links">
+            <li><a href="waitlist.html" class="footer__link">Waitlist</a></li>
+            <li><span class="footer__link footer__link--disabled">iOS App (Coming Soon)</span></li>
+            <li><span class="footer__link footer__link--disabled">Android (Coming Soon)</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Twitter</a></li>
+            <li><a href="#" class="footer__link">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Chalk</span>
+        <span>Built for athletes, by athletes</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Scroll to MJ (red) frame on mobile
-    if (window.innerWidth <= 768) {
-      const strip = document.querySelector('.athletes__strip');
-      const mjFrame = document.querySelectorAll('.athletes__frame')[2];
-      if (strip && mjFrame) {
-        strip.scrollLeft = mjFrame.offsetLeft - 16;
-      }
-    }
-  </script>
-</body>
+  <script src="scripts/main.js"></script>
 
+</body>
 </html>

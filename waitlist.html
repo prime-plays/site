@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Waitlist — Chalk</title>
+  <meta name="description" content="Join the Chalk waitlist. Be among the first athletes on the merit-based social platform where content rises on quality, not clout.">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-chalk.png">
+  <link rel="apple-touch-icon" href="images/logo-chalk.png">
+  
+  
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/waitlist.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo-link">
+        <span class="nav__logo">CHALK</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="features.html" class="nav__link">Features</a></li>
+        <li><a href="manifesto.html" class="nav__link">Manifesto</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="waitlist.html" class="btn btn--primary btn--nav">Join Waitlist</a>
+      </div>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="features.html" class="mobile-nav__link">Features</a>
+    <a href="manifesto.html" class="mobile-nav__link">Manifesto</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="waitlist.html" class="mobile-nav__link mobile-nav__link--accent">Join Waitlist</a>
+  </div>
+
+  <main>
+
+    <!-- Hero / CTA -->
+    <section class="waitlist-hero reveal">
+      <div class="container waitlist-hero__inner">
+        <span class="badge badge--accent">EARLY ACCESS</span>
+        <h1 class="waitlist-hero__title">GET IN EARLY</h1>
+        <p class="waitlist-hero__subtitle">We're building Chalk with athletes, not for them. Join the waitlist to be part of the conversation from day one.</p>
+
+        <!-- Waitlist Form -->
+        <form class="waitlist-form" action="#" method="post">
+          <div class="waitlist-form__group">
+            <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+          </div>
+          <div class="waitlist-form__group">
+            <select name="sport" required aria-label="Select your sport">
+              <option value="" disabled selected>Select your sport</option>
+              <option value="basketball">Basketball</option>
+              <option value="football">Football</option>
+              <option value="soccer">Soccer</option>
+              <option value="track-field">Track &amp; Field</option>
+              <option value="swimming">Swimming</option>
+              <option value="crossfit">CrossFit</option>
+              <option value="weightlifting">Weightlifting</option>
+              <option value="tennis">Tennis</option>
+              <option value="mma-boxing">MMA / Boxing</option>
+              <option value="running">Running</option>
+              <option value="volleyball">Volleyball</option>
+              <option value="baseball">Baseball</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="waitlist-form__group">
+            <select name="athlete-type" required aria-label="Athlete type">
+              <option value="" disabled selected>I am a...</option>
+              <option value="competitive">Competitive Athlete</option>
+              <option value="recreational">Recreational Athlete</option>
+              <option value="coach">Coach / Trainer</option>
+              <option value="scout">Scout / Recruiter</option>
+              <option value="fan">Fan / Supporter</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg waitlist-form__submit">Join the Waitlist</button>
+          <p class="waitlist-form__note">No spam. No data selling. Just early access.</p>
+        </form>
+
+        <!-- Success State -->
+        <div class="waitlist-success">
+          <div class="waitlist-success__icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="28"/>
+              <path d="M20 33l8 8 16-16"/>
+            </svg>
+          </div>
+          <h2 class="waitlist-success__title">YOU'RE IN</h2>
+          <p class="waitlist-success__text">We'll be in touch soon. In the meantime, read our manifesto to learn what we're building.</p>
+          <a href="manifesto.html" class="btn btn--outline" style="margin-top: 24px;">Read the Manifesto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="perks reveal">
+      <div class="container">
+        <div class="perks__grid">
+          <div class="perks__item">
+            <div class="perks__icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 4l4 8 9 1.5-6.5 6.5 1.5 9L20 24.5 12 29l1.5-9L7 13.5 16 12z"/>
+              </svg>
+            </div>
+            <h3 class="perks__title">Early Access</h3>
+            <p class="perks__text">Be among the first athletes on the platform</p>
+          </div>
+          <div class="perks__item">
+            <div class="perks__icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 8h24v24H8z"/>
+                <path d="M14 20h12M20 14v12"/>
+              </svg>
+            </div>
+            <h3 class="perks__title">Shape the Product</h3>
+            <p class="perks__text">Your feedback directly influences what we build</p>
+          </div>
+          <div class="perks__item">
+            <div class="perks__icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="16" r="5"/>
+                <circle cx="26" cy="16" r="5"/>
+                <path d="M6 32c0-5 4-9 8-9s8 4 8 9M18 32c0-5 4-9 8-9s8 4 8 9"/>
+              </svg>
+            </div>
+            <h3 class="perks__title">Community</h3>
+            <p class="perks__text">Connect with other founding athletes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq reveal">
+      <div class="container">
+        <div class="faq__inner">
+          <h2 class="faq__title">QUESTIONS?</h2>
+
+          <details class="faq__item">
+            <summary>When does Chalk launch?<span class="faq__icon"></span></summary>
+            <p>We're in early development, talking to athletes first. We'll announce launch dates to waitlist members before anyone else.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Is Chalk free?<span class="faq__icon"></span></summary>
+            <p>Chalk will always have a free tier for athletes. We believe access to a merit-based platform shouldn't cost anything.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>What sports are supported?<span class="faq__icon"></span></summary>
+            <p>We're starting with the most popular athletic disciplines and expanding based on community demand. If your sport isn't listed, select 'Other' — we want to hear from you.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>How is Chalk different from Instagram or TikTok?<span class="faq__icon"></span></summary>
+            <p>Those platforms are built for everyone. Chalk is built specifically for athletes. Content rises on merit, not followers. There are no algorithms deciding who gets seen.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo-text">CHALK</span>
+          <p class="footer__tagline">Where athletes rise together</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Pages</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="manifesto.html" class="footer__link">Manifesto</a></li>
+            <li><a href="features.html" class="footer__link">Features</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Product</h4>
+          <ul class="footer__links">
+            <li><a href="waitlist.html" class="footer__link">Waitlist</a></li>
+            <li><span class="footer__link footer__link--disabled">iOS App (Coming Soon)</span></li>
+            <li><span class="footer__link footer__link--disabled">Android (Coming Soon)</span></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Twitter</a></li>
+            <li><a href="#" class="footer__link">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Chalk</span>
+        <span>Built for athletes, by athletes</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
