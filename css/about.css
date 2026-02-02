@@ -120,6 +120,13 @@
   line-height: 1.7;
 }
 
+.values__grid .card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-border-hover);
+  cursor: default;
+}
+
 /* ==========================================================================
    Comparison
    ========================================================================== */

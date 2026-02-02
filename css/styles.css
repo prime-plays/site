@@ -456,6 +456,7 @@ pre {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .nav__logo-link {
@@ -478,6 +479,9 @@ pre {
   gap: var(--space-6);
   align-items: center;
   list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav__link {
@@ -765,6 +769,11 @@ pre {
   }
 
   .nav__actions {
+    gap: var(--space-2);
+    margin-left: auto;
+  }
+
+  .nav__actions .btn--nav {
     display: none;
   }
 

@@ -147,6 +147,7 @@
   font-size: 14px;
   color: var(--color-text-muted);
   margin-top: var(--space-4);
+  max-width: none;
 }
 
 /* ==========================================================================
