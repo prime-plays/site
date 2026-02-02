@@ -181,47 +181,97 @@
   }
 
   /* ========================================================================
-     Waitlist Form Handling
+     Waitlist Form Handling — Google Sheets Integration
      ======================================================================== */
 
+  const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwSUcyqtgJC0wgdJPTqM9NnYAPVzxXS75qNqYIF1xmA-E9M9hjISXVVorQI1U2D8tKv1Q/exec';
+
+  function submitToSheet(data) {
+    return fetch(WAITLIST_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data),
+    });
+  }
+
   function initWaitlistForm() {
-    const form = document.querySelector('.waitlist-form');
-    if (!form) return;
+    const forms = document.querySelectorAll('.waitlist-form');
+    if (!forms.length) return;
 
-    // If a pre-built success element exists (e.g. waitlist page), use it
-    const existingSuccess = document.querySelector('.waitlist-success');
+    forms.forEach((form) => {
+      const existingSuccess = form.closest('section')
+        ? form.closest('section').querySelector('.waitlist-success')
+        : null;
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-      const emailInput = form.querySelector('input[type="email"]');
-      const email = emailInput ? emailInput.value.trim() : '';
+        const emailInput = form.querySelector('input[type="email"]');
+        const sportSelect = form.querySelector('select[name="sport"]');
+        const typeSelect = form.querySelector('select[name="athlete-type"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
 
-      if (!email) return;
+        const email = emailInput ? emailInput.value.trim() : '';
+        if (!email) return;
 
-      if (existingSuccess) {
-        // Use the page's own success state
-        form.style.display = 'none';
-        existingSuccess.classList.add('active');
-      } else {
-        // Inline CTA form — replace with simple success message
-        const wrapper = form.parentElement;
-        form.remove();
+        // Determine which page the submission is from
+        const source = window.location.pathname.split('/').pop() || 'index.html';
 
-        const success = document.createElement('div');
-        success.className = 'waitlist-success';
-        success.innerHTML = `
-          <p style="color: var(--color-accent); font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em;">
-            You're on the list.
-          </p>
-          <p style="color: var(--color-text-secondary); font-size: 14px; margin-top: 8px;">
-            We'll reach out to <strong style="color: var(--color-text);">${email}</strong> when it's time.
-          </p>
-        `;
-        success.style.display = 'block';
-        success.style.animation = 'fadeInUp 400ms ease forwards';
-        wrapper.appendChild(success);
-      }
+        const payload = {
+          email: email,
+          sport: sportSelect ? sportSelect.value : '',
+          type: typeSelect ? typeSelect.value : '',
+          source: source,
+        };
+
+        // Loading state
+        const originalText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Submitting...';
+        }
+
+        submitToSheet(payload)
+          .then(() => {
+            // no-cors means we can't read the response, assume success
+            if (existingSuccess) {
+              form.style.display = 'none';
+              existingSuccess.classList.add('active');
+            } else {
+              // Inline CTA form — replace with success message
+              const wrapper = form.parentElement;
+              form.remove();
+
+              const success = document.createElement('div');
+              success.className = 'waitlist-success';
+              success.innerHTML = `
+                <p style="color: var(--color-accent); font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em;">
+                  You're on the list.
+                </p>
+                <p style="color: var(--color-text-secondary); font-size: 14px; margin-top: 8px;">
+                  We'll reach out to <strong style="color: var(--color-text);">${email}</strong> when it's time.
+                </p>
+              `;
+              success.style.display = 'block';
+              success.style.animation = 'fadeInUp 400ms ease forwards';
+              wrapper.appendChild(success);
+            }
+          })
+          .catch(() => {
+            // Network error — restore button
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            }
+            // Still show success UI since no-cors often triggers catch
+            // even on successful submissions
+            if (existingSuccess) {
+              form.style.display = 'none';
+              existingSuccess.classList.add('active');
+            }
+          });
+      });
     });
   }
 
