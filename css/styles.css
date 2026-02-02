@@ -439,6 +439,7 @@ pre {
               border-color var(--duration) var(--ease),
               backdrop-filter var(--duration) var(--ease);
   border-bottom: 1px solid transparent;
+  animation: navFadeIn var(--duration-slow) var(--ease) both;
 }
 
 .nav.scrolled {
@@ -485,10 +486,32 @@ pre {
 }
 
 .nav__link {
+  position: relative;
   font-size: 14px;
   font-weight: 500;
   color: var(--color-text-secondary);
   transition: color var(--duration) var(--ease);
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration) var(--ease);
+}
+
+.nav__link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav__link--active::after {
+  transform: scaleX(1);
 }
 
 .nav__link:hover {
@@ -521,6 +544,21 @@ pre {
 .theme-toggle:hover {
   color: var(--color-text);
   border-color: var(--color-text);
+}
+
+.theme-toggle svg {
+  transition: transform var(--duration) var(--ease);
+}
+
+.theme-toggle:active svg {
+  transform: rotate(25deg) scale(0.85);
+}
+
+/* --- Mobile Nav Theme Toggle --- */
+.mobile-nav__theme-toggle {
+  margin-top: var(--space-4);
+  width: 44px;
+  height: 44px;
 }
 
 /* Icon visibility: show sun in dark mode, moon in light mode */
@@ -578,14 +616,31 @@ pre {
   justify-content: center;
   gap: var(--space-6);
   opacity: 0;
+  transform: translateY(-8px);
   pointer-events: none;
-  transition: opacity var(--duration) var(--ease);
+  transition: opacity var(--duration-slow) var(--ease),
+              transform var(--duration-slow) var(--ease);
 }
 
 .mobile-nav.open {
   opacity: 1;
+  transform: translateY(0);
   pointer-events: all;
 }
+
+/* Mobile nav link stagger */
+.mobile-nav > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+}
+
+.mobile-nav.open > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0ms; }
+.mobile-nav.open > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 50ms; }
+.mobile-nav.open > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 100ms; }
+.mobile-nav.open > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 150ms; }
+.mobile-nav.open > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 200ms; }
+.mobile-nav.open > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 250ms; }
 
 .mobile-nav__link {
   font-family: var(--font-display);
@@ -606,6 +661,14 @@ pre {
 /* --- Active Nav Link --- */
 .nav__link--active {
   color: var(--color-text);
+}
+
+/* --- Focus-visible outlines for a11y --- */
+.nav__link:focus-visible,
+.theme-toggle:focus-visible,
+.nav__hamburger:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
 }
 
 /* --- Nav CTA Button --- */
@@ -717,6 +780,17 @@ pre {
 .stagger.revealed > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
 .stagger.revealed > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
 
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -771,6 +845,10 @@ pre {
   .nav__actions {
     gap: var(--space-2);
     margin-left: auto;
+  }
+
+  .nav__actions .theme-toggle {
+    display: none;
   }
 
   .nav__actions .btn--nav {

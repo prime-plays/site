@@ -26,13 +26,15 @@
     const theme = getStoredTheme();
     applyTheme(theme);
 
-    const toggleBtn = document.querySelector('.theme-toggle');
-    if (!toggleBtn) return;
+    const toggleBtns = document.querySelectorAll('.theme-toggle');
+    if (!toggleBtns.length) return;
 
-    toggleBtn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
+    toggleBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
     });
   }
 

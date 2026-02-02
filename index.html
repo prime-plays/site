@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chalk — The Athlete Platform</title>
+  <title>Chalk </title>
   <meta name="description" content="Chalk is where athletes find their community, get recruited, and organize the games that matter. Communities, recruiting, and events — all in one platform.">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
@@ -62,6 +62,22 @@
     <a href="manifesto.html" class="mobile-nav__link">Manifesto</a>
     <a href="about.html" class="mobile-nav__link">About</a>
     <a href="waitlist.html" class="mobile-nav__link mobile-nav__link--accent">Join Waitlist</a>
+    <button class="theme-toggle mobile-nav__theme-toggle" aria-label="Toggle theme">
+      <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
   </div>
 
   <main>
@@ -144,27 +160,152 @@
       </div>
     </section>
 
-    <!-- Section 4: Athletes Strip -->
-    <section class="athletes reveal" aria-label="Inspired by the greats">
+    <!-- Section 4: Athlete Profiles -->
+    <section class="profiles reveal" aria-label="Athlete profiles on Chalk">
       <div class="container">
-        <span class="athletes__label">Inspired by the Greats</span>
-      </div>
-      <div class="athletes__grid">
-        <div class="athletes__frame">
-          <img src="images/muhammad-ali.webp" alt="Muhammad Ali" class="athletes__img" loading="lazy">
-          <span class="athletes__name">Muhammad Ali</span>
-        </div>
-        <div class="athletes__frame">
-          <img src="images/usain-bolt.webp" alt="Usain Bolt" class="athletes__img" loading="lazy">
-          <span class="athletes__name">Usain Bolt</span>
-        </div>
-        <div class="athletes__frame">
-          <img src="images/michael-jordan.webp" alt="Michael Jordan" class="athletes__img" loading="lazy">
-          <span class="athletes__name">Michael Jordan</span>
-        </div>
-        <div class="athletes__frame">
-          <img src="images/serena-williams.webp" alt="Serena Williams" class="athletes__img" loading="lazy">
-          <span class="athletes__name">Serena Williams</span>
+        <span class="profiles__label">Profiles on Chalk</span>
+        <div class="profiles__grid stagger">
+
+          <!-- Muhammad Ali -->
+          <div class="profile-card">
+            <div class="profile-card__corner profile-card__corner--tl"></div>
+            <div class="profile-card__corner profile-card__corner--tr"></div>
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">
+                <img src="images/muhammad-ali.webp" alt="Muhammad Ali" loading="lazy">
+              </div>
+              <div class="profile-card__name">Muhammad Ali</div>
+              <div class="profile-card__handle">@theGOAT</div>
+              <span class="profile-card__sport">Boxing</span>
+            </div>
+            <div class="profile-card__level">
+              <span class="profile-card__level-label">LV. 99</span>
+              <span class="profile-card__level-xp">MAX XP</span>
+            </div>
+            <div class="profile-card__xp-bar"><div class="profile-card__xp-fill" style="width:100%"></div></div>
+            <div class="profile-card__stats">
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">847</div>
+                <div class="profile-card__stat-label">Posts</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">12.4K</div>
+                <div class="profile-card__stat-label">Connections</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">312</div>
+                <div class="profile-card__stat-label">Challenges</div>
+              </div>
+            </div>
+            <div class="profile-card__corner profile-card__corner--bl"></div>
+            <div class="profile-card__corner profile-card__corner--br"></div>
+          </div>
+
+          <!-- Usain Bolt -->
+          <div class="profile-card">
+            <div class="profile-card__corner profile-card__corner--tl"></div>
+            <div class="profile-card__corner profile-card__corner--tr"></div>
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">
+                <img src="images/usain-bolt.webp" alt="Usain Bolt" loading="lazy">
+              </div>
+              <div class="profile-card__name">Usain Bolt</div>
+              <div class="profile-card__handle">@lightning</div>
+              <span class="profile-card__sport">Track &amp; Field</span>
+            </div>
+            <div class="profile-card__level">
+              <span class="profile-card__level-label">LV. 95</span>
+              <span class="profile-card__level-xp">48,200 / 50,000 XP</span>
+            </div>
+            <div class="profile-card__xp-bar"><div class="profile-card__xp-fill" style="width:96%"></div></div>
+            <div class="profile-card__stats">
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">523</div>
+                <div class="profile-card__stat-label">Posts</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">9.8K</div>
+                <div class="profile-card__stat-label">Connections</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">276</div>
+                <div class="profile-card__stat-label">Challenges</div>
+              </div>
+            </div>
+            <div class="profile-card__corner profile-card__corner--bl"></div>
+            <div class="profile-card__corner profile-card__corner--br"></div>
+          </div>
+
+          <!-- Michael Jordan -->
+          <div class="profile-card">
+            <div class="profile-card__corner profile-card__corner--tl"></div>
+            <div class="profile-card__corner profile-card__corner--tr"></div>
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">
+                <img src="images/michael-jordan.webp" alt="Michael Jordan" loading="lazy">
+              </div>
+              <div class="profile-card__name">Michael Jordan</div>
+              <div class="profile-card__handle">@airjordan</div>
+              <span class="profile-card__sport">Basketball</span>
+            </div>
+            <div class="profile-card__level">
+              <span class="profile-card__level-label">LV. 99</span>
+              <span class="profile-card__level-xp">MAX XP</span>
+            </div>
+            <div class="profile-card__xp-bar"><div class="profile-card__xp-fill" style="width:100%"></div></div>
+            <div class="profile-card__stats">
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">1.2K</div>
+                <div class="profile-card__stat-label">Posts</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">15.7K</div>
+                <div class="profile-card__stat-label">Connections</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">489</div>
+                <div class="profile-card__stat-label">Challenges</div>
+              </div>
+            </div>
+            <div class="profile-card__corner profile-card__corner--bl"></div>
+            <div class="profile-card__corner profile-card__corner--br"></div>
+          </div>
+
+          <!-- Serena Williams -->
+          <div class="profile-card">
+            <div class="profile-card__corner profile-card__corner--tl"></div>
+            <div class="profile-card__corner profile-card__corner--tr"></div>
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">
+                <img src="images/serena-williams.webp" alt="Serena Williams" loading="lazy">
+              </div>
+              <div class="profile-card__name">Serena Williams</div>
+              <div class="profile-card__handle">@queenofcourts</div>
+              <span class="profile-card__sport">Tennis</span>
+            </div>
+            <div class="profile-card__level">
+              <span class="profile-card__level-label">LV. 98</span>
+              <span class="profile-card__level-xp">49,100 / 50,000 XP</span>
+            </div>
+            <div class="profile-card__xp-bar"><div class="profile-card__xp-fill" style="width:98%"></div></div>
+            <div class="profile-card__stats">
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">934</div>
+                <div class="profile-card__stat-label">Posts</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">11.2K</div>
+                <div class="profile-card__stat-label">Connections</div>
+              </div>
+              <div class="profile-card__stat">
+                <div class="profile-card__stat-num">401</div>
+                <div class="profile-card__stat-label">Challenges</div>
+              </div>
+            </div>
+            <div class="profile-card__corner profile-card__corner--bl"></div>
+            <div class="profile-card__corner profile-card__corner--br"></div>
+          </div>
+
         </div>
       </div>
     </section>
